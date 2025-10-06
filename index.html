@@ -1,131 +1,167 @@
-<index html>
-<html>
+<!DOCTYPE html>
+<html lang="th">
 <head>
-<body>
-
-<center>
-
-<!-- กรอบเนื้อเรื่อง -->
-<div id="story1" style="width:80%;max-width:600px;border:3px solid #4f8bff;
-     border-radius:15px;padding:25px;box-shadow:0 0 20px #4f8bff;
-     color:white;font-family:'Sarabun',sans-serif;margin-bottom:30px;background:#0f1624;">
-<h2 style="text-align:center;color:#4f8bff;text-shadow:0 0 10px #8ab6ff;">เนื้อเรื่อง</h2>
-
-<p style="font-size:16px;line-height:1.8;text-align:justify;color:#e0e0e0;">
-คุณและเหล่าคนรักของคุณ 
-<span class="char">เซดริก เคลวิน</span>, 
-<span class="char">คาเอล โรอัน</span>, 
-<span class="char">เอเดน ไวลด์ครอฟต์</span>, 
-<span class="char">ลูเซียส แบล็กธอร์น</span>, 
-<span class="char">ไรน์ เอลเดน</span> 
-และ <span class="char">เซเรน แวนเดอร์ไวล์</span> 
-สังหาร <span class="enemy">เวสเพียร์ ไอเซรีน</span> ได้สำเร็จ
-</p>
-
-<div style="margin-top:20px;text-align:center;">
-  <button onclick="nextScene(1)" 
-  onmouseover="this.style.background='#6faaff';" 
-  onmouseout="this.style.background='#4f8bff';"
-  style="color:white;padding:10px 25px;border:none;border-radius:12px;
-         font-weight:bold;cursor:pointer;box-shadow:0 0 15px #8ab6ff;
-         background:#4f8bff;transition:0.3s;">ต่อไป</button>
-</div>
-</div>
-
-
-<!-- กรอบฉากจบที่ 13 -->
-<div id="story2" style="display:none;width:80%;max-width:600px;border:3px solid #ff8b4f;
-     border-radius:15px;padding:25px;box-shadow:0 0 20px #ff8b4f;
-     color:white;font-family:'Sarabun',sans-serif;margin-bottom:30px;background:#0f1624;">
-<h2 style="text-align:center;color:#ff8b4f;text-shadow:0 0 10px #ffb68f;">
-ฉากจบที่ 13: เซเรน แวนเดอร์ไวล์</h2>
-
-<p style="font-size:16px;line-height:1.8;text-align:justify;color:#e0e0e0;">
-คุณจบการศึกษาจากวิทยาลัยเวทคลูเธเซียภายใน 4 ปี 
-คุณและเหล่าคนรักของคุณใช้ชีวิตร่วมกันอย่างมีความสุขในราชอาณาจักรเซเรซ
-</p>
-
-<div style="margin-top:20px;text-align:center;">
-  <button onclick="nextScene(2)" 
-  onmouseover="this.style.background='#ffa06f';" 
-  onmouseout="this.style.background='#ff8b4f';"
-  style="color:white;padding:10px 25px;border:none;border-radius:12px;
-         font-weight:bold;cursor:pointer;box-shadow:0 0 15px #ffb68f;
-         background:#ff8b4f;transition:0.3s;">ต่อไป</button>
-</div>
-</div>
-
-
-<!-- หน้าต่างระบบเกม -->
-<div id="gameWindow" style="display:none;width:400px;border:3px solid #ff4f8b;
-     border-radius:15px;padding:25px;box-shadow:0 0 20px #ff4f8b;
-     color:white;font-family:'Sarabun',sans-serif;margin:auto;background:#0f1624;">
-<h2 style="color:#ffb6c1;text-align:center;text-shadow:0 0 10px #ff4f8b;">ระบบเกม</h2>
-
-<p style="font-size:16px;line-height:1.5;text-align:center;">
-คุณเคลียร์เกมในรูทของ <span class="char">เซเรน แวนเดอร์ไวล์</span> สำเร็จ!<br>
-คุณต้องการเริ่มเกมใหม่หรือไม่?
-</p>
-
-<div style="margin-top:20px;text-align:center;">
-  <!-- ปุ่ม "ใช่" ลิงก์ไป Dek-D -->
-  <a href="https://writer.dek-d.com/dek-d/writer/view.php?id=2647571" target="_blank"
-     onmouseover="this.style.background='#ff6fa1';" 
-     onmouseout="this.style.background='#ff4f8b';"
-     style="color:white;padding:10px 20px;margin:5px;border:none;border-radius:10px;
-            font-weight:bold;cursor:pointer;box-shadow:0 0 10px #ff8da1;
-            background:#ff4f8b;transition:0.3s;text-decoration:none;display:inline-block;">ใช่</a>
-
-  <!-- ปุ่ม "ไม่" ย้อนกลับ -->
-  <button onclick="restartGame()"
-  onmouseover="this.style.background='#666';" 
-  onmouseout="this.style.background='#444';"
-  style="color:white;padding:10px 20px;margin:5px;border:none;border-radius:10px;
-         font-weight:bold;cursor:pointer;box-shadow:0 0 10px #888;
-         background:#444;transition:0.3s;">ไม่</button>
-</div>
-</div>
-
-</center>
-
-<!-- เอฟเฟกต์เรืองแสง Hover -->
+<meta charset="UTF-8">
+<title>เกม ดอกรักแห่งวิทยาลัยเวทคลูเธเซีย</title>
 <style>
-.char {
-  color: #ff8da1;
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #0a192f 20%, #010a16 80%);
+  font-family: 'Sarabun', sans-serif;
+  color: #e0f7ff;
+  overflow: hidden;
+}
+.screen {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.8s ease;
+  background: rgba(0, 10, 30, 0.85);
+}
+.active {
+  display: flex;
+  opacity: 1;
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+.card {
+  background: rgba(10, 25, 47, 0.8);
+  border: 2px solid #4fd3ff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 0 25px #4fd3ff;
+  text-align: center;
+  max-width: 700px;
+  color: #e0f7ff;
+  transition: 0.4s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px #66e0ff, 0 0 55px #4fd3ff;
+}
+h2 {
+  color: #66e0ff;
+  text-shadow: 0 0 15px #66e0ff, 0 0 30px #4fd3ff;
+  transition: 0.3s ease;
+}
+h2:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 25px #99f0ff, 0 0 50px #66e0ff;
+}
+button {
+  background: linear-gradient(90deg, #4fd3ff, #007bff);
+  color: white;
   font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  margin: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 18px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px #4fd3ff;
 }
-.char:hover {
-  text-shadow: 0 0 8px #ffb6c1, 0 0 15px #ff4f8b, 0 0 25px #ff4f8b;
-  color: #ffffff;
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px #99f0ff, 0 0 65px #4fd3ff;
 }
-
-.enemy {
-  color: #ff4f8b;
+.name {
+  color: #66e0ff;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  display: inline-block;
 }
-.enemy:hover {
-  text-shadow: 0 0 8px #ff8da1, 0 0 20px #ff2e6a, 0 0 30px #ff004f;
-  color: #ffffff;
+.name:hover {
+  transform: scale(1.15);
+  text-shadow: 0 0 20px #99f0ff, 0 0 40px #4fd3ff;
 }
 </style>
+</head>
+<body>
 
-<!-- สคริปต์เปลี่ยนฉาก -->
+<div class="screen active" id="welcome">
+  <div class="card">
+    <h2>ยินดีต้อนรับสู่เกม<br>ดอกรักแห่งวิทยาลัยเวทคลูเธเซีย</h2>
+    <p>ยินดีต้อนรับเข้าสู่โลกแห่งเวทมนตร์ ความรัก และการตัดสินใจ<br>ทุกทางเลือกของคุณจะกำหนดชะตาของคุณเอง</p>
+    <button onclick="go('choice')">เล่นต่อ</button>
+  </div>
+</div>
+
+<div class="screen" id="choice">
+  <div class="card">
+    <h2>เนื้อเรื่อง</h2>
+    <p>คุณและเหล่าคนรักของคุณเอาชนะ <span class="name">เวสเพียร์ ไอเซรีน</span> ได้สำเร็จ<br>
+    คุณจะสังหาร <span class="name">เวสเพียร์ ไอเซรีน</span> หรือไม่?</p>
+    <div>
+      <button onclick="go('story')">ใช่</button>
+      <button onclick="go('wrong')">ไม่</button>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="story">
+  <div class="card">
+    <h2>เนื้อเรื่องหลัก</h2>
+    <p>คุณและเหล่าคนรักของคุณ 
+    <span class="name">เซดริก เคลวิน</span>,
+    <span class="name">คาเอล โรอัน</span>,
+    <span class="name">เอเดน ไวลด์ครอฟต์</span>,
+    <span class="name">ลูเซียส แบล็กธอร์น</span>,
+    <span class="name">ไรน์ เอลเดน</span> และ
+    <span class="name">เซเรน แวนเดอร์ไวล์</span>
+    สังหาร <span class="name">เวสเพียร์ ไอเซรีน</span> ได้สำเร็จ</p>
+    <button onclick="go('ending13')">ต่อไป</button>
+  </div>
+</div>
+
+<div class="screen" id="ending13">
+  <div class="card">
+    <h2>ฉากจบที่ 13: เซเรน แวนเดอร์ไวล์</h2>
+    <p>คุณจบการศึกษาจากวิทยาลัยเวทคลูเธเซียภายใน 4 ปี<br>
+    คุณและเหล่าคนรักของคุณใช้ชีวิตร่วมกันอย่างมีความสุข<br>ในราชอาณาจักรเซเรซ</p>
+    <div>
+      <button onclick="go('game')">ต่อไป</button>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="game">
+  <div class="card">
+    <h2>ระบบเกม</h2>
+    <p>คุณเคลียร์เกมในรูทของ <span class="name">เซเรน แวนเดอร์ไวล์</span> สำเร็จ!<br>
+    คุณต้องการเริ่มเกมใหม่หรือไม่?</p>
+    <div>
+      <button onclick="window.open('https://writer.dek-d.com/dek-d/writer/view.php?id=2647571', '_blank')">ใช่</button>
+      <button onclick="go('welcome')">ไม่</button>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="wrong">
+  <div class="card">
+    <h2>ฉากจบที่ 4: ทางเลือกที่ผิดพลาด</h2>
+    <p>คุณถูกลอบสังหารโดย <span class="name">เวสเพียร์ ไอเซรีน</span> ในเวลาต่อมา<br>
+    คุณเสียชีวิตแล้ว<br>เริ่มเกมใหม่เลยหรือไม่?</p>
+    <div>
+      <button onclick="go('choice')">ใช่</button>
+      <button onclick="go('welcome')">ไม่</button>
+    </div>
+  </div>
+</div>
+
 <script>
-function nextScene(step) {
-  if (step === 1) {
-    document.getElementById("story1").style.display = "none";
-    document.getElementById("story2").style.display = "block";
-  } else if (step === 2) {
-    document.getElementById("story2").style.display = "none";
-    document.getElementById("gameWindow").style.display = "block";
-  }
-}
-function restartGame() {
-  document.getElementById("gameWindow").style.display = "none";
-  document.getElementById("story1").style.display = "block";
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
 </script>
+
+</body>
+</html>
