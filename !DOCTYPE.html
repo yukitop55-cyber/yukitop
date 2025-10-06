@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+
+<center>
+
+<!-- กรอบเนื้อเรื่อง -->
+<div id="story1" style="width:80%;max-width:600px;border:3px solid #4f8bff;
+     border-radius:15px;padding:25px;box-shadow:0 0 20px #4f8bff;
+     color:white;font-family:'Sarabun',sans-serif;margin-bottom:30px;background:#0f1624;">
+<h2 style="text-align:center;color:#4f8bff;text-shadow:0 0 10px #8ab6ff;">เนื้อเรื่อง</h2>
+
+<p style="font-size:16px;line-height:1.8;text-align:justify;color:#e0e0e0;">
+คุณและเหล่าคนรักของคุณ 
+<span class="char">เซดริก เคลวิน</span>, 
+<span class="char">คาเอล โรอัน</span>, 
+<span class="char">เอเดน ไวลด์ครอฟต์</span>, 
+<span class="char">ลูเซียส แบล็กธอร์น</span>, 
+<span class="char">ไรน์ เอลเดน</span> 
+และ <span class="char">เซเรน แวนเดอร์ไวล์</span> 
+สังหาร <span class="enemy">เวสเพียร์ ไอเซรีน</span> ได้สำเร็จ
+</p>
+
+<div style="margin-top:20px;text-align:center;">
+  <button onclick="nextScene(1)" 
+  onmouseover="this.style.background='#6faaff';" 
+  onmouseout="this.style.background='#4f8bff';"
+  style="color:white;padding:10px 25px;border:none;border-radius:12px;
+         font-weight:bold;cursor:pointer;box-shadow:0 0 15px #8ab6ff;
+         background:#4f8bff;transition:0.3s;">ต่อไป</button>
+</div>
+</div>
+
+
+<!-- กรอบฉากจบที่ 13 -->
+<div id="story2" style="display:none;width:80%;max-width:600px;border:3px solid #ff8b4f;
+     border-radius:15px;padding:25px;box-shadow:0 0 20px #ff8b4f;
+     color:white;font-family:'Sarabun',sans-serif;margin-bottom:30px;background:#0f1624;">
+<h2 style="text-align:center;color:#ff8b4f;text-shadow:0 0 10px #ffb68f;">
+ฉากจบที่ 13: เซเรน แวนเดอร์ไวล์</h2>
+
+<p style="font-size:16px;line-height:1.8;text-align:justify;color:#e0e0e0;">
+คุณจบการศึกษาจากวิทยาลัยเวทคลูเธเซียภายใน 4 ปี 
+คุณและเหล่าคนรักของคุณใช้ชีวิตร่วมกันอย่างมีความสุขในราชอาณาจักรเซเรซ
+</p>
+
+<div style="margin-top:20px;text-align:center;">
+  <button onclick="nextScene(2)" 
+  onmouseover="this.style.background='#ffa06f';" 
+  onmouseout="this.style.background='#ff8b4f';"
+  style="color:white;padding:10px 25px;border:none;border-radius:12px;
+         font-weight:bold;cursor:pointer;box-shadow:0 0 15px #ffb68f;
+         background:#ff8b4f;transition:0.3s;">ต่อไป</button>
+</div>
+</div>
+
+
+<!-- หน้าต่างระบบเกม -->
+<div id="gameWindow" style="display:none;width:400px;border:3px solid #ff4f8b;
+     border-radius:15px;padding:25px;box-shadow:0 0 20px #ff4f8b;
+     color:white;font-family:'Sarabun',sans-serif;margin:auto;background:#0f1624;">
+<h2 style="color:#ffb6c1;text-align:center;text-shadow:0 0 10px #ff4f8b;">ระบบเกม</h2>
+
+<p style="font-size:16px;line-height:1.5;text-align:center;">
+คุณเคลียร์เกมในรูทของ <span class="char">เซเรน แวนเดอร์ไวล์</span> สำเร็จ!<br>
+คุณต้องการเริ่มเกมใหม่หรือไม่?
+</p>
+
+<div style="margin-top:20px;text-align:center;">
+  <!-- ปุ่ม "ใช่" ลิงก์ไป Dek-D -->
+  <a href="https://writer.dek-d.com/dek-d/writer/view.php?id=2647571" target="_blank"
+     onmouseover="this.style.background='#ff6fa1';" 
+     onmouseout="this.style.background='#ff4f8b';"
+     style="color:white;padding:10px 20px;margin:5px;border:none;border-radius:10px;
+            font-weight:bold;cursor:pointer;box-shadow:0 0 10px #ff8da1;
+            background:#ff4f8b;transition:0.3s;text-decoration:none;display:inline-block;">ใช่</a>
+
+  <!-- ปุ่ม "ไม่" ย้อนกลับ -->
+  <button onclick="restartGame()"
+  onmouseover="this.style.background='#666';" 
+  onmouseout="this.style.background='#444';"
+  style="color:white;padding:10px 20px;margin:5px;border:none;border-radius:10px;
+         font-weight:bold;cursor:pointer;box-shadow:0 0 10px #888;
+         background:#444;transition:0.3s;">ไม่</button>
+</div>
+</div>
+
+</center>
+
+<!-- เอฟเฟกต์เรืองแสง Hover -->
+<style>
+.char {
+  color: #ff8da1;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.char:hover {
+  text-shadow: 0 0 8px #ffb6c1, 0 0 15px #ff4f8b, 0 0 25px #ff4f8b;
+  color: #ffffff;
+}
+
+.enemy {
+  color: #ff4f8b;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.enemy:hover {
+  text-shadow: 0 0 8px #ff8da1, 0 0 20px #ff2e6a, 0 0 30px #ff004f;
+  color: #ffffff;
+}
+</style>
+
+<!-- สคริปต์เปลี่ยนฉาก -->
+<script>
+function nextScene(step) {
+  if (step === 1) {
+    document.getElementById("story1").style.display = "none";
+    document.getElementById("story2").style.display = "block";
+  } else if (step === 2) {
+    document.getElementById("story2").style.display = "none";
+    document.getElementById("gameWindow").style.display = "block";
+  }
+}
+function restartGame() {
+  document.getElementById("gameWindow").style.display = "none";
+  document.getElementById("story1").style.display = "block";
+}
+</script>
